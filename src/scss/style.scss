@@ -1,1 +1,46 @@
 @import './mixins/flex';
+@import './mixins/reset';
+
+body {
+  @include display-flex;
+  @include flex-direction(column);
+}
+
+.flex {
+  @include display-flex;
+
+  &.row {
+    @include flex-direction(row);
+  }
+  &.column {
+    @include flex-direction(column);
+  }
+  &.grow {
+    @include flex-grow(1);
+  }
+}
+
+.grow {
+  @include flex-grow(1);
+}
+
+.heading {
+  padding: 10px;
+  text-align: center;
+  background-color: #DDD;
+}
+
+.navigation {
+  width: 300px;
+  padding: 5px 10px 0px 10px;
+  background-color: #EEE;
+  box-shadow: 3px 0px 5px -2px;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.content {
+  padding: 5px 10px 0px 10px;
+}
