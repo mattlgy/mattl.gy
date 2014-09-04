@@ -1,0 +1,14 @@
+extends /layouts/base.jade
+
+include /mixins/helpers.jade
+
+block body
+  block page-title
+    h1
+      block title
+        | Matt Liegey
+  div(class='nav')
+    block nav
+      | /
+  block content
+    div This is a page.

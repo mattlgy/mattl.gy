@@ -1,0 +1,26 @@
+mixin linker (pathStr, link, href)
+  - href        = href || pathStr + '/' + link.toLowerCase().replace(/\s+/g, '-')
+  - var isFile  = link.indexOf('.') !== -1
+  - var classes = []
+
+  - if (isFile)  classes.push('file')
+  - if (!isFile) classes.push('dir');
+  - if (!attributes.pwd && !isFile) link = link + '/'
+
+  a(href=href, class=classes)= link
+
+mixin nav (path, files)
+  - var pathStr = ''
+  span(class='pwd')
+    | ~/
+    +linker(null, 'www', '/')(pwd)
+    if path && path.length
+      each dir in path
+        | /
+        +linker(pathStr, dir)(pwd)
+        - pathStr = pathStr + '/' + dir
+  if files
+    ul(class='ls')
+      each file in files
+        li
+          +linker(pathStr, file)
