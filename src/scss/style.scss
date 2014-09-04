@@ -24,20 +24,50 @@ body {
   @include flex-grow(1);
 }
 
+.shrink {
+  @include flex-shrink(1);
+}
+
 .heading {
   padding: 10px;
   text-align: center;
   background-color: #DDD;
 }
 
-.navigation {
-  width: 300px;
+.side {
+  width: 200px;
   padding: 5px 10px 0px 10px;
   background-color: #EEE;
   box-shadow: 3px 0px 5px -2px;
+}
+
+.mono {
+  font-family: Pragmata, Menlo, 'DejaVu LGC Sans Mono', 'DejaVu Sans Mono', Consolas, 'Everson Mono', 'Lucida Console', 'Andale Mono', 'Nimbus Mono L', 'Liberation Mono', FreeMono, 'Osaka Monospaced', Courier, 'New Courier', monospace;
+  line-height: 20px;
+  font-size: 12px;
+}
+
+.cmd {
+
+}
+.cmd-res {
+  padding-left: 8px;
+}
+
+.navigation {
   a {
+    display: inline-block;
     text-decoration: none;
     color: inherit;
+  }
+
+  .ls {
+    text-align: right;
+    display: inline-block;
+    // padding: 3px 0px 3px 0px;
+
+    li {
+    }
   }
 }
 

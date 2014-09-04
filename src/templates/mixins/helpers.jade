@@ -12,15 +12,21 @@ mixin linker (pathStr, link, href)
 mixin nav (path, files)
   - var pathStr = ''
   span(class='pwd')
-    | ~/
-    +linker(null, 'www', '/')(pwd)
-    if path && path.length
-      each dir in path
-        | /
-        +linker(pathStr, dir)(pwd)
-        - pathStr = pathStr + '/' + dir
+    span(class='cmd') $ pwd
+    br
+    div(class='cmd-res')
+      | ~/
+      +linker(null, 'www', '/')(pwd)
+      if path && path.length
+        each dir in path
+          | /
+          +linker(pathStr, dir)(pwd)
+          - pathStr = pathStr + '/' + dir
   if files
-    ul(class='ls')
+    br
+    span(class='cmd') $ ls
+    br
+    ul(class='ls cmd-res')
       each file in files
         li
           +linker(pathStr, file)
