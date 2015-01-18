@@ -17,11 +17,23 @@
       </div>
       <div class="content">
         <h2>Imgbed</h2>
-        <textarea id="textarea"></textarea>
-        <input id="file-upload" type="file">
-        <button id="save">save</button>
-        <input id="file-name" type="text" value="image.png"><a id="file-link" download="image.png" style="display:none">image.png</a>
-        <canvas id="canvas" width="150" height="150"></canvas>
+        <div class="flex grow">
+          <div class="column">
+            <div class="grow">
+              <textarea id="textarea"></textarea>
+            </div>
+            <div class="grow">
+              <input id="file-upload" type="file">
+            </div>
+            <div class="grow flex row">
+              <button id="save">save</button>
+              <input id="file-name" type="text" value="image.png" class="grow"><a id="file-link" download="image.png" style="display:none">image.png</a>
+            </div>
+          </div>
+          <div class="column">
+            <canvas id="canvas" width="150" height="150"></canvas>
+          </div>
+        </div>
         <script type="text/javascript" src="/js/imgbed-page.js"></script>
       </div>
     </div>

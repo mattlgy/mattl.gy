@@ -35,8 +35,8 @@ gulp.task('scripts', function() {
 
 gulp.task('watch', function () {
   gulp.watch(process.cwd() + '/src/templates/**/*.jade', ['templates']);
-  gulp.watch(process.cwd() + '/src/scss/*.scss',         ['sass']);
-  gulp.watch(process.cwd() + '/src/js/*.js',             ['scripts']);
+  gulp.watch(process.cwd() + '/src/scss/**/*.scss',      ['sass']);
+  gulp.watch(process.cwd() + '/src/js/**/*.js',          ['scripts']);
 });
 
 gulp.task('build', ['templates', 'sass', 'scripts']);

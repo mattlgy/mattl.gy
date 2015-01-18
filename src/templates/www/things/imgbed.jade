@@ -7,10 +7,17 @@ block navigation
   +nav(['things', 'imgbed.html'])
 
 block content
-  textarea(id="textarea")
-  input(id="file-upload" type="file")
-  button(id="save") save
-  input(id="file-name" type="text" value="image.png")
-  a(id="file-link" download='image.png' style="display:none") image.png
-  canvas(id="canvas" width="150" height="150")
+  div.flex.grow
+    div.column
+      div.grow
+        textarea#textarea
+      div.grow
+        input(id="file-upload" type="file")
+      div.grow.flex.row
+        button(id="save") save
+        input.grow(id="file-name" type="text" value="image.png")
+        a(id="file-link" download='image.png' style="display:none") image.png
+    div.column
+      canvas(id="canvas" width="150" height="150")
+    
   script(type="text/javascript" src="/js/imgbed-page.js")
