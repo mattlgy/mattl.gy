@@ -40,7 +40,3 @@ gulp.task('watch', function () {
 });
 
 gulp.task('build', ['templates', 'sass', 'scripts']);
-
-
-
-var gulp = require('gulp');
